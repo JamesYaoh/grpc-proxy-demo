@@ -1,15 +1,34 @@
+/*
+ *
+ * Copyright 2015 gRPC authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
 package main
 
 import (
-    "golang.org/x/net/context"
-    "google.golang.org/grpc"
-    "grpc-proxy-demo/grpc/pb"
+    "context"
     "log"
     "os"
+    "time"
+    "google.golang.org/grpc"
+    pb "grpc-proxy-demo/grpc/helloworld"
 )
 
 const (
-    address     = "localhost:80"
+    address     = "localhost:8089"
     defaultName = "world"
 )
 
@@ -17,7 +36,7 @@ func main() {
     // Set up a connection to the server.
     conn, err := grpc.Dial(address, grpc.WithInsecure())
     if err != nil {
-        log.Fatalf("can not connect: %v", err)
+        log.Fatalf("did not connect: %v", err)
     }
     defer conn.Close()
     c := pb.NewGreeterClient(conn)
@@ -27,7 +46,9 @@ func main() {
     if len(os.Args) > 1 {
         name = os.Args[1]
     }
-    r, err := c.SayHello(context.Background(), &pb.HelloRequest{Name: name})
+    ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+    defer cancel()
+    r, err := c.SayHello(ctx, &pb.HelloRequest{Name: name})
     if err != nil {
         log.Fatalf("could not greet: %v", err)
     }
