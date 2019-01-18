@@ -9,6 +9,12 @@
 			"revisionTime": "2019-01-09T07:22:47Z"
 		},
 		{
+			"checksumSHA1": "NmOpWW+Eg+Na/v2K/PIzybRV8gM=",
+			"path": "github.com/golang/protobuf/protoc-gen-go/descriptor",
+			"revision": "347cf4a86c1cb8d262994d8ef5924d4576c5b331",
+			"revisionTime": "2019-01-09T07:22:47Z"
+		},
+		{
 			"checksumSHA1": "qJIYaqUDCFF/GuTvI06M86x/cnw=",
 			"path": "github.com/golang/protobuf/ptypes",
 			"revision": "347cf4a86c1cb8d262994d8ef5924d4576c5b331",
@@ -259,6 +265,18 @@
 			"path": "google.golang.org/grpc/peer",
 			"revision": "59acad4c45a26c87c53596998fe0a6ae2ea8e2cc",
 			"revisionTime": "2019-01-16T21:07:56Z"
+		},
+		{
+			"checksumSHA1": "nDirKNFuVReVyWtax+t5wsZjLNA=",
+			"path": "google.golang.org/grpc/reflection",
+			"revision": "9f93218b136d2bb2d8e5f6937613e46ad569279e",
+			"revisionTime": "2019-01-18T00:27:42Z"
+		},
+		{
+			"checksumSHA1": "MnJN3fNSjJTqhNnttTjQU1f4YXg=",
+			"path": "google.golang.org/grpc/reflection/grpc_reflection_v1alpha",
+			"revision": "9f93218b136d2bb2d8e5f6937613e46ad569279e",
+			"revisionTime": "2019-01-18T00:27:42Z"
 		},
 		{
 			"checksumSHA1": "OKEgPZWxK6Q3djrYfM/Jicv0Zmc=",
