@@ -9,7 +9,7 @@ import (
 )
 
 const (
-    address     = "localhost"
+    address     = "localhost:80"
     defaultName = "world"
 )
 
