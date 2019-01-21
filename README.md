@@ -1,7 +1,6 @@
 # gRPC proxy demo #
 
 This demo composed of a golang backend listening on 8089 and a nginx proxy listening on 80.
-Currently this demo runs on 10.3.6.142.
 
 ## prepare ##
 
