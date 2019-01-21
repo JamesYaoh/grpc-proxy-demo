@@ -5,6 +5,7 @@ this demo composed of a golang backend listening on 8089 and a nginx proxy liste
 ## prepare ##
 
 - git clone this repo under $HOME
+
 ~~~shell
 cd ~ && git clone git@git.dev.sh.ctripcorp.com:hongyao/grpc-proxy-demo.git
 ~~~
@@ -15,18 +16,22 @@ cd ~ && git clone git@git.dev.sh.ctripcorp.com:hongyao/grpc-proxy-demo.git
   
 ## nginx ##
 run run.sh to install docker and start nginx
+
 ~~~shell
 cd ~/grpc-proxy-demo && ./run.sh
 ~~~
 
 ## test ##
-- run test.sh to test
+- run test.sh
+
 ~~~shell
 cd ~/grpc-proxy-demo && ./test.sh
 ~~~
-- use grpcurl to test
+
+- use grpcurl
+
 ~~~shell
-cd ~/grpc-proxy-demo
-grpcurl -plaintext localhost:80 list
-grpcurl -plaintext localhost:80 helloworld.Greeter.SayHello
+cd ~/grpc-proxy-demo/grpc/bin
+./grpcurl -plaintext localhost:80 list
+./grpcurl -plaintext localhost:80 helloworld.Greeter.SayHello
 ~~~
